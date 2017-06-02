@@ -29,6 +29,7 @@
 
 
         <div class="container">
+
             <div class="row">
                 <div class="col-sm-5">
                     <div class="w3-panel w3-blue w3-card-4">
@@ -36,9 +37,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+
                         <table class="w3-table-all w3-hoverable">
                             <thead>
                             <tr class="w3-green">
@@ -78,7 +81,7 @@
                             ?>
                         </table>
                     </div>
-                <div class="col-md-1"></div>
+                <div class="col-sm-2"></div>
             </div>
         </div>
 
