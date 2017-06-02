@@ -10,6 +10,8 @@ namespace App\Birthday;
 
 use App\Message\Message;
 use App\Model\Database;
+use App\Utility\Utility;
+use PDO;
 
 class Birthday extends Database
 {
@@ -48,9 +50,53 @@ class Birthday extends Database
             Message::message("Success :) Data Inserted Successfully.");
         }
         else{
-            Message::message("Failure :( Data Not Inserted Successfully!");
+            Message::message("Failure :( Data Not Inserted!");
         }
     } // end of store()
+
+
+    public function index(){
+
+        $query = "SELECT * FROM `tbl_birthday`";
+
+        $STH = $this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $allData = $STH->fetchAll();
+        return $allData;
+
+    } // end of index()
+
+    public function view(){
+
+        $query = "SELECT * FROM `tbl_birthday` WHERE `id`=".$this->id;
+
+        $STH = $this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $singleData = $STH->fetch();
+        return $singleData;
+
+    } // end of view()
+
+    public function update(){
+
+        $query = "UPDATE `tbl_birthday` SET `name` = ?,`dob` = ? WHERE `id` = $this->id;";
+
+        //Utility::dd($query);
+
+        $dataArray = array($this->name, $this->dob);
+
+        $STH = $this->DBH->prepare($query);
+        $result = $STH->execute($dataArray);
+
+        if($result){
+            Message::message("Success :) Data Updated Successfully.");
+        }
+        else{
+            Message::message("Failure :( Data Not Updated!");
+        }
+    } // end of update()
 
 
 }

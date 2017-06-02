@@ -10,6 +10,8 @@ namespace App\Gender;
 
 use App\Message\Message;
 use App\Model\Database;
+use App\Utility\Utility;
+use PDO;
 
 class Gender extends Database
 {
@@ -51,6 +53,51 @@ class Gender extends Database
             Message::message("Failure :( Data Not Inserted Successfully!");
         }
     } // end of store()
+
+
+    public function index(){
+
+        $query = "SELECT * FROM `tbl_gender`";
+
+        $STH = $this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $allData = $STH->fetchAll();
+        return $allData;
+
+    } // end of index()
+
+    public function view(){
+
+        $query = "SELECT * FROM `tbl_gender` WHERE `id`=".$this->id;
+
+        $STH = $this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $singleData = $STH->fetch();
+        return $singleData;
+
+    } // end of view()
+
+    public function update(){
+
+        $query = "UPDATE `tbl_gender` SET `name` = ?,`gender` = ? WHERE `id` = $this->id;";
+
+        //Utility::dd($query);
+
+        $dataArray = array($this->name, $this->gender);
+
+        $STH = $this->DBH->prepare($query);
+        $result = $STH->execute($dataArray);
+
+        if($result){
+            Message::message("Success :) Data Updated Successfully.");
+        }
+        else{
+            Message::message("Failure :( Data Not Updated!");
+        }
+    } // end of update()
+
 
 
 }

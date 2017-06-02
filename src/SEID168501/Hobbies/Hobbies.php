@@ -10,6 +10,8 @@ namespace App\Hobbies;
 
 use App\Message\Message;
 use App\Model\Database;
+use App\Utility\Utility;
+use PDO;
 
 class Hobbies extends Database
 {

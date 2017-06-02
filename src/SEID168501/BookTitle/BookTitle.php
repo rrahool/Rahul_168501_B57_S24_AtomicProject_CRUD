@@ -49,7 +49,7 @@ class BookTitle extends Database
             Message::message("Success :) Data Inserted Successfully.");
         }
         else{
-            Message::message("Failure :( Data Not Inserted Successfully!");
+            Message::message("Failure :( Data Not Inserted!");
         }
     } // end of store()
 
@@ -89,12 +89,12 @@ class BookTitle extends Database
         $result = $STH->execute($dataArray);
 
         if($result){
-            Message::message("Success :) Data Inserted Successfully.");
+            Message::message("Success :) Data Updated Successfully.");
         }
         else{
-            Message::message("Failure :( Data Not Inserted Successfully!");
+            Message::message("Failure :( Data Not Updated!");
         }
-    } // end of store()
+    } // end of update()
 
 
 

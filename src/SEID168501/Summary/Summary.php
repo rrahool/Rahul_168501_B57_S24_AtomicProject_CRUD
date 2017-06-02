@@ -10,6 +10,8 @@ namespace App\Summary;
 
 use App\Message\Message;
 use App\Model\Database;
+use App\Utility\Utility;
+use PDO;
 
 class Summary extends Database
 {

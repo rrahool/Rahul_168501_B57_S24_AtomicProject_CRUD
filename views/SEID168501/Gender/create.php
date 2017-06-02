@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-3" for="hobbies">Select Gender: </label>
+            <label class="control-label col-sm-3" for="gender">Select Gender: </label>
             <div class="col-sm-9">
                 <div style="height: 7px"></div>
                 <input type="radio" name="gender" value="Male"> Male

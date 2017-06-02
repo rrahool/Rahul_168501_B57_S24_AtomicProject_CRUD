@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-3" for="hobbies">Date of Birth: </label>
+            <label class="control-label col-sm-3" for="dob">Date of Birth: </label>
             <div class="col-sm-9">
                 <input type="date" class="form-control" id="dob" name="dob">
             </div>
