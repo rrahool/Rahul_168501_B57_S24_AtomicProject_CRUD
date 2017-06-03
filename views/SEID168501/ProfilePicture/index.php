@@ -2,10 +2,10 @@
 
     require_once "../../../vendor/autoload.php";
 
-    use App\Summary\Summary;
+    use App\ProfilePicture\ProfilePicture;
     use App\Message\Message;
 
-    $obj = new Summary();
+    $obj = new ProfilePicture();
 
     $allData = $obj->index();
 
@@ -16,7 +16,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Summary of Organization - All</title>
+    <title>Profile Picture - All</title>
     <link rel="stylesheet" href="../../../resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../resources/w3css/4/w3.css">
     <script src="../../../resources/bootstrap/js/jquery.js"></script>
@@ -31,9 +31,9 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                     <div class="w3-panel w3-blue w3-card-4">
-                        <h2> Active Summary List of - Organization </h2>
+                        <h2> Active List of - Profile Picture </h2>
                     </div>
                 </div>
             </div>
@@ -42,14 +42,13 @@
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
 
-                        <table class="table table-bordered w3-table-all w3-hoverable">
+                        <table class="table-bordered w3-table-all w3-hoverable">
                             <thead>
                             <tr class="w3-green">
                                 <th>Serial</th>
-                                <th>ID</th>
+                                <th width="8%">ID</th>
                                 <th>Name</th>
-                                <th>Organization</th>
-                                <th>Summary</th>
+                                <th>Profile Picture</th>
                                 <th width="20%">Action Buttons</th>
                             </tr>
                             </thead>
@@ -61,8 +60,7 @@
                                             <td>$serial</td>
                                             <td>$row->id</td>
                                             <td>$row->name</td>
-                                            <td>$row->organization</td>
-                                            <td>$row->summary</td>
+                                            <td>$row->profile_picture</td>
                                             <td>
                                                 <a href='view.php?id=$row->id'>
                                                     <button class='w3-button w3-white w3-border w3-border-green w3-round-medium'>

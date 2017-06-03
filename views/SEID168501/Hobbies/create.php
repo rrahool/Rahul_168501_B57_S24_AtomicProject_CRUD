@@ -51,20 +51,19 @@
             <div class="col-sm-9">
                 <div style="height: 7px"></div>
                 <input type="checkbox" id="hobbies" name="Hobbies[]" value="Gardening"> Gardening
-                <br>
-                <br>
+                <br><br>
+
                 <input type="checkbox" id="hobbies" name="Hobbies[]" value="Book Reading"> Book Reading
-                <br>
-                <br>
+                <br><br>
+
                 <input type="checkbox" id="hobbies" name="Hobbies[]" value="Photography"> Photography
-                <br>
-                <br>
+                <br><br>
+
                 <input type="checkbox" id="hobbies" name="Hobbies[]" value="Gaming"> Gaming
-                <br>
-                <br>
+                <br><br>
+
                 <input type="checkbox" id="hobbies" name="Hobbies[]" value="Traveling"> Traveling
-                <br>
-                <br>
+                <br><br>
             </div>
         </div>
 

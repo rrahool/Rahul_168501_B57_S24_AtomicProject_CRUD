@@ -54,4 +54,48 @@ class ProfilePicture extends Database
     } // end of store()
 
 
+    public function index(){
+
+        $query = "SELECT * FROM `tbl_profile_pictures`";
+
+        $STH = $this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $allData = $STH->fetchAll();
+        return $allData;
+
+    } // end of index()
+
+    public function view(){
+
+        $query = "SELECT * FROM `tbl_profile_pictures` WHERE `id`=".$this->id;
+
+        $STH = $this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $singleData = $STH->fetch();
+        return $singleData;
+
+    } // end of view()
+
+    public function update(){
+
+        $query = "UPDATE `tbl_profile_pictures` SET `name` = ?,`profile_picture` = ? WHERE `id` = $this->id;";
+
+        //Utility::dd($query);
+
+        $dataArray = array($this->name, $this->profilePicture);
+
+        $STH = $this->DBH->prepare($query);
+        $result = $STH->execute($dataArray);
+
+        if($result){
+            Message::message("Success :) Data Updated Successfully.");
+        }
+        else{
+            Message::message("Failure :( Data Not Updated!");
+        }
+    } // end of update()
+
+
 }

@@ -48,7 +48,7 @@
                                 <th>Serial</th>
                                 <th>ID</th>
                                 <th>Book Title</th>
-                                <th>Author Name</th>
+                                <th>Profile Picture</th>
                                 <th>Action Buttons</th>
                             </tr>
                             </thead>

@@ -56,6 +56,7 @@
                     <option value="Sylhet">Sylhet</option>
                     <option value="Rajshahi">Rajshahi</option>
                     <option value="Barisal">Barisal</option>
+                    <option value="Rangpur">Rangpur</option>
                 </select>
             </div>
         </div>

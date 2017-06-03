@@ -2,7 +2,7 @@
 
     require_once "../../../vendor/autoload.php";
 
-    use App\City\City;
+    use App\ProfilePicture\ProfilePicture;
     use App\Message\Message;
     use App\Utility\Utility;
 
@@ -12,7 +12,7 @@
         Utility::redirect("index.php");
     }
 
-    $obj = new City();
+    $obj = new ProfilePicture();
 
     $obj->setData($_GET);
 
@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>City - Edit</title>
+        <title>Profile Picture - Edit</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../../resources/bootstrap/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
             div.container{
                 margin-top: 150px;
             }
-            div.col-lg-6{
+            div.col-lg-8{
                 background-color: ghostwhite;
                 border-radius: 10px;
             }
@@ -42,9 +42,9 @@
     <body>
 
     <div class="container">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-            <h2>City Edit Form</h2>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <h2>ProfilePicture Edit Form</h2>
             <form class="form-horizontal" action="update.php" method="post">
 
                 <!--///////////////////////////////////////////////////////-->
@@ -59,18 +59,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-3" for="city">City:</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="city">
-                                <option value="Dhaka" <?php if($singleData->city == "Dhaka") echo "selected" ?>>Dhaka</option>
-                                <option value="Chittagong" <?php if($singleData->city == "Chittagong") echo "selected" ?>>Chittagong</option>
-                                <option value="Khulna" <?php if($singleData->city == "Khulna") echo "selected" ?>>Khulna</option>
-                                <option value="Sylhet" <?php if($singleData->city == "Sylhet") echo "selected" ?>>Sylhet</option>
-                                <option value="Rajshahi" <?php if($singleData->city == "Rajshahi") echo "selected" ?>>Rajshahi</option>
-                                <option value="Barisal" <?php if($singleData->city == "Barisal") echo "selected" ?>>Barisal</option>
-                                <option value="Barisal" <?php if($singleData->city == "Rangpur") echo "selected" ?>>Rangpur</option>
-                            </select>
-                        </div>
+                    <label class="control-label col-sm-3" for="image">Current Profile Picture:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="image" name="image" value="<?php echo $singleData->profile_picture ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="image">Change Picture:</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" id="image" name="image" accept=".png, .jpg, .jpeg">
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -80,7 +79,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-lg-3"></div>
+        <div class="col-lg-2"></div>
     </div>
     <script src="../../../resources/bootstrap/js/jquery.js"></script>
 

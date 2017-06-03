@@ -2,7 +2,7 @@
 
     require_once "../../../vendor/autoload.php";
 
-    use App\Summary\Summary;
+    use App\Hobbies\Hobbies;
     use App\Message\Message;
     use App\Utility\Utility;
 
@@ -12,7 +12,7 @@
         Utility::redirect("index.php");
     }
 
-    $obj = new Summary();
+    $obj = new Hobbies();
 
     $obj->setData($_GET);
 
@@ -24,7 +24,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Summary of Organization - Single</title>
+        <title>Hobbies List - Single</title>
         <link rel="stylesheet" href="../../../resources/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../resources/w3css/4/w3.css">
         <script src="../../../resources/bootstrap/js/jquery.js"></script>
@@ -42,7 +42,7 @@
             <div class="w3-card-4 w3-half">
 
                 <header class="w3-container w3-blue">
-                    <h2>Single Summary Information - Organization</h2>
+                    <h2>Single Person Information - Hobbies</h2>
                 </header>
 
                 <?php
@@ -52,8 +52,7 @@
                                 <img src='../../../images/shatkahon.jpg' class='w3-left w3-round w3-margin-right' style='width:120px; height: 150px'>
                                 <span class='w3-badge w3-red'>$singleData->id</span><br>
                                 <span class='w3-xxlarge'>$singleData->name</span><br>
-                                <span class='w3-large'>$singleData->organization</span><br>
-                                <span class='w3-small'>$singleData->summary</span>
+                                <span class='w3-large'>$singleData->hobbies</span>
                             </li>
                         </ul>
                     ";
@@ -67,7 +66,7 @@
         <div class="w3-row">
             <div class="col-sm-6">
                 <div class="w3-panel w3-blue w3-card-4">
-                    <h2> Single Summary Information - Summary of Organization </h2>
+                    <h2> Single Person Information - Hobbies </h2>
                 </div>
             </div>
         </div>
@@ -82,12 +81,12 @@
 //                                    <td>$singleData->id</td>
 //                                </tr>
 //                                <tr>
-//                                    <td>Summary of Organization: </td>
+//                                    <td>Hobbies: </td>
 //                                    <td>$singleData->name</td>
 //                                </tr>
 //                                <tr>
-//                                    <td>Organization: </td>
-//                                    <td>$singleData->organization</td>
+//                                    <td>Hobbies: </td>
+//                                    <td>$singleData->hobbies</td>
 //                                </tr>
 //";
                     ?>

@@ -2,10 +2,10 @@
 
 require_once "../../../vendor/autoload.php";
 
-use App\Summary\Summary;
+use App\ProfilePicture\ProfilePicture;
 use App\Utility\Utility;
 
-$obj = new Summary();
+$obj = new ProfilePicture();
 
 $obj->setData($_POST);
 

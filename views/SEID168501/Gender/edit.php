@@ -59,11 +59,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-3" for="gender">Gender:</label>
+                    <label class="control-label col-sm-3" for="gender">Gender: </label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="gender" name="gender" value="<?php echo $singleData->gender ?>">
+                        <div style="height: 7px"></div>
+                        <input type="radio" name="gender" value="<?php if($singleData->gender == "Male") echo "checked" ?>"> Male
+                        <input type="radio" name="gender" value="<?php if($singleData->gender == "Female") echo "checked" ?>"> Female
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-9">
                         <button type="submit" class="btn btn-default">Update</button>

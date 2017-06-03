@@ -2,7 +2,7 @@
 
     require_once "../../../vendor/autoload.php";
 
-    use App\City\City;
+    use App\Hobbies\Hobbies;
     use App\Message\Message;
     use App\Utility\Utility;
 
@@ -12,18 +12,20 @@
         Utility::redirect("index.php");
     }
 
-    $obj = new City();
+    $obj = new Hobbies();
 
     $obj->setData($_GET);
 
     $singleData = $obj->view();
+
+    $hobbiesArray = explode(", ", $singleData->hobbies);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>City - Edit</title>
+        <title>Hobbies - Edit</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../../resources/bootstrap/css/bootstrap.min.css">
@@ -44,7 +46,7 @@
     <div class="container">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-            <h2>City Edit Form</h2>
+            <h2>Hobbies Edit Form</h2>
             <form class="form-horizontal" action="update.php" method="post">
 
                 <!--///////////////////////////////////////////////////////-->
@@ -59,18 +61,24 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-3" for="city">City:</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="city">
-                                <option value="Dhaka" <?php if($singleData->city == "Dhaka") echo "selected" ?>>Dhaka</option>
-                                <option value="Chittagong" <?php if($singleData->city == "Chittagong") echo "selected" ?>>Chittagong</option>
-                                <option value="Khulna" <?php if($singleData->city == "Khulna") echo "selected" ?>>Khulna</option>
-                                <option value="Sylhet" <?php if($singleData->city == "Sylhet") echo "selected" ?>>Sylhet</option>
-                                <option value="Rajshahi" <?php if($singleData->city == "Rajshahi") echo "selected" ?>>Rajshahi</option>
-                                <option value="Barisal" <?php if($singleData->city == "Barisal") echo "selected" ?>>Barisal</option>
-                                <option value="Barisal" <?php if($singleData->city == "Rangpur") echo "selected" ?>>Rangpur</option>
-                            </select>
-                        </div>
+                    <label class="control-label col-sm-3" for="hobbies">Select Hobbies: </label>
+                    <div class="col-sm-9">
+                        <div style="height: 7px"></div>
+                        <input type="checkbox" id="hobbies" name="Hobbies[]" value="Gardening" <?php if(in_array("Gardening",$hobbiesArray)) echo "checked" ?>> Gardening
+                        <br><br>
+
+                        <input type="checkbox" id="hobbies" name="Hobbies[]" value="Book Reading" <?php if(in_array("Book Reading",$hobbiesArray)) echo "checked" ?>> Book Reading
+                        <br><br>
+
+                        <input type="checkbox" id="hobbies" name="Hobbies[]" value="Photography" <?php if(in_array("Photography",$hobbiesArray)) echo "checked" ?>> Photography
+                        <br><br>
+
+                        <input type="checkbox" id="hobbies" name="Hobbies[]" value="Gaming" <?php if(in_array("Gaming",$hobbiesArray)) echo "checked" ?>> Gaming
+                        <br><br>
+
+                        <input type="checkbox" id="hobbies" name="Hobbies[]" value="Traveling" <?php if(in_array("Traveling",$hobbiesArray)) echo "checked" ?>> Traveling
+                        <br><br>
+                    </div>
                 </div>
 
                 <div class="form-group">
